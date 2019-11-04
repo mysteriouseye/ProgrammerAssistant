@@ -1,0 +1,15 @@
+{
+  "name": "paclinet",
+  "version": "1.0.0",
+  "description": "程序员助手客户端",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mysteriouseye/ProgrammerAssistant.git"
+  },
+  "author": "caijiluolei",
+  "license": "MIT"
+}
