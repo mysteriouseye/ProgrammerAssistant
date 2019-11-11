@@ -1,0 +1,60 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 2px;
+}
+.header-line{
+    -webkit-app-region:drag;
+    width: 87%;
+    height: 30px;
+    padding-top: 30px;
+}
+span{
+    color: gray;
+    -webkit-user-select: none;
+}
+.header-line>span{
+    margin-left: 50px;
+    text-shadow: 0px 3px 9px rgba(0,0,0,0.5);
+}
+.close-line{
+    width: 10%;
+    height: 50px;
+    position: fixed;
+    right: 0px;
+}
+.close-line>.close_btn{
+    position: absolute;
+    right: 50px;
+    top:26px;
+    color: gray;
+}
+.close-line>.reduce_btn{
+    position: absolute;
+    right: 100px;
+    top:26px;
+    color: gray;
+}
+
+.close_btn:hover{
+    animation-name: tran360;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    color: red;
+}
+.reduce_btn:hover{
+    animation-name: tran360;
+    animation-duration: 0.6s;
+    animation-iteration-count: 1;
+    color:red;
+}
+
+@keyframes tran360{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
