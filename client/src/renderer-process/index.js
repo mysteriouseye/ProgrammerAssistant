@@ -10,7 +10,7 @@ function rendererHtml(){
         <span id="close_window" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white close_btn"><i class="mdui-icon material-icons">close</i></span>
         <span id="reduce_window" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white reduce_btn"><i class="mdui-icon material-icons">keyboard_arrow_down</i></span>
         </nav>`;
-    document.body.innerHTML = header;
+    document.body.innerHTML += header;
 }
 
 rendererHtml();

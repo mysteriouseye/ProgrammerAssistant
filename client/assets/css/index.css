@@ -1,13 +1,44 @@
 body{
     margin: 0 auto;
     padding: 0;
-    border-radius: 2px;
+    animation-name: start;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 .header-line{
     -webkit-app-region:drag;
     width: 87%;
     height: 30px;
     padding-top: 30px;
+}
+.head-icon{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 50%;
+    background-image: -webkit-linear-gradient(170deg, #8146b4, #69d9ff);
+    animation-name: head-tran360;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    transition: All 0.6s ease-in-out;
+}
+.head-icon:hover{
+    transform: rotate(360deg);
+}
+.box {
+	width:100%;
+    height:100%;
+    border-radius:50%;
+    background:#fff;
+    display:flex;
+	align-items:center;
+    justify-content:center;
+}
+.box>img{
+    width: 70%;
+    height: auto;
 }
 span{
     color: gray;
@@ -28,27 +59,39 @@ span{
     right: 50px;
     top:26px;
     color: gray;
+    transition: All 0.6s ease-in-out;
 }
 .close-line>.reduce_btn{
     position: absolute;
     right: 100px;
     top:26px;
     color: gray;
+    transition: All 0.6s ease-in-out;
 }
 
 .close_btn:hover{
     animation-name: tran360;
     animation-duration: 0.6s;
     animation-iteration-count: 1;
-    color: red;
+    color:#8146b4;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0)));
 }
 .reduce_btn:hover{
     animation-name: tran360;
     animation-duration: 0.6s;
     animation-iteration-count: 1;
-    color:red;
+    color:#69d9ff;
+    -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0)));
 }
 
+@keyframes start{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 @keyframes tran360{
     0%{
         transform: rotateZ(0deg);
@@ -57,4 +100,14 @@ span{
         transform: rotateZ(360deg);
     }
 }
+@keyframes head-tran360{
+    0%{
+        background-position: 0px -400px;
+    }
+    100%{
+        background-position: 100px -300px;
+    }
+
+}
+
 

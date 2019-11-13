@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,33 @@
 
     <script src="../assets/mdui/js/mdui.min.js"></script>
 </head>
-<body class="mdui-loaded">
 
-    <div class="left-menu">
-
+<body class="mdui-drawer-body-left mdui-loaded">
+    <!-- <span id="close_window" mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white close_btn"><i class="mdui-icon material-icons">menu</i></span> -->
+    <div class="mdui-drawer mdui-drawer-open" style="top:50px;" id="left-drawer">
+        <div class="head-icon mdui-shadow-21">
+            <div class="box">
+                <img src="../assets/img/user_black.png">
+            </div>
+        </div>
+        <div class="mdui-list"><a class="mdui-list-item mdui-ripple mdui-text-color-theme mdui-list-item-active"
+                href="/"><i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                <div class="mdui-list-item-content">首页</div>
+            </a><a class="mdui-list-item mdui-ripple" href="/questions"><i
+                    class="mdui-list-item-icon mdui-icon material-icons">forum</i>
+                <div class="mdui-list-item-content">问答</div>
+            </a><a href="/docs" class="mdui-list-item mdui-ripple"><i
+                    class="mdui-list-item-icon mdui-icon material-icons">book</i>
+                <div class="mdui-list-item-content">开发文档</div>
+            </a><a href="/design" class="mdui-list-item mdui-ripple"><i
+                    class="mdui-list-item-icon mdui-icon material-icons">layers</i>
+                <div class="mdui-list-item-content">设计规范</div>
+            </a></div>
     </div>
 </body>
 <script>
     require('electron-connect').client.create();
     require('./renderer-process/index');
 </script>
+
 </html>
