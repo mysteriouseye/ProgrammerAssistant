@@ -15,29 +15,76 @@
 <body class="mdui-drawer-body-left mdui-loaded">
     <!-- <span id="close_window" mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white close_btn"><i class="mdui-icon material-icons">menu</i></span> -->
     <div class="mdui-drawer mdui-drawer-open" style="top:50px;" id="left-drawer">
-        <div class="head-icon mdui-shadow-21">
+        <div class="head-icon mdui-shadow-17">
             <div class="box">
                 <img src="../assets/img/user_black.png">
             </div>
         </div>
-        <div class="mdui-list"><a class="mdui-list-item mdui-ripple mdui-text-color-theme mdui-list-item-active"
-                href="/"><i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+        <div class="user-info">
+            <span id="user-info-username mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+                mdui-dialog="{target: '#login-register-dialog'}">登录/注册</span>
+        </div>
+        <div class="list-menu mdui-list"><a
+                class="mdui-list-item mdui-ripple mdui-text-color-theme mdui-list-item-active" href="/"><i
+                    class="mdui-list-item-icon mdui-icon material-icons">home</i>
                 <div class="mdui-list-item-content">首页</div>
             </a><a class="mdui-list-item mdui-ripple" href="/questions"><i
                     class="mdui-list-item-icon mdui-icon material-icons">forum</i>
-                <div class="mdui-list-item-content">问答</div>
+                <div class="mdui-list-item-content">工具箱</div>
             </a><a href="/docs" class="mdui-list-item mdui-ripple"><i
                     class="mdui-list-item-icon mdui-icon material-icons">book</i>
-                <div class="mdui-list-item-content">开发文档</div>
+                <div class="mdui-list-item-content">用户中心</div>
+            </a><a href="/docs" class="mdui-list-item mdui-ripple"><i
+                    class="mdui-list-item-icon mdui-icon material-icons">announcement</i>
+                <div class="mdui-list-item-content">通知</div>
             </a><a href="/design" class="mdui-list-item mdui-ripple"><i
-                    class="mdui-list-item-icon mdui-icon material-icons">layers</i>
-                <div class="mdui-list-item-content">设计规范</div>
-            </a></div>
+                    class="mdui-list-item-icon mdui-icon material-icons">settings</i>
+                <div class="mdui-list-item-content">设置</div>
+            </a>
+        </div>
+    </div>
+    <div class="user-form mdui-dialog" style="width: 400px;" id="login-register-dialog">
+        <div class="login-form">
+            <div class="head-icon mdui-shadow-17">
+                <div class="box">
+                    <img src="../assets/img/user_black.png">
+                </div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">account_circle</i>
+                <label class="mdui-textfield-label">用户名/邮箱</label>
+                <input class="mdui-textfield-input" type="text" required />
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">vpn_key</i>
+                <label class="mdui-textfield-label">密码</label>
+                <input class="mdui-textfield-input" type="password" pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$"
+                    required />
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <i class="mdui-icon material-icons">code</i>
+                <label class="mdui-textfield-label">验证码</label>
+                <input class="mdui-textfield-input" style="width:100px;" type="text" required />
+                <img style="background: white;float:right;margin-top:-40px;" width="100px" height="40px">
+            </div>
+            <center><input type="submit"
+                    class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue mdui-text-color-white"
+                    style="width: 200px;margin: 0 auto;margin-top:20px" value="登录" /></center>
+            <div style="margin-top:20px;width:100%;text-align: center;">
+                <span>没有账号？立即<a id="regist_a" class="mdui-text-color-blue" style="cursor:pointer;">注册</a>一个</span>
+            </div>
+
+        </div>
     </div>
 </body>
 <script>
     require('electron-connect').client.create();
     require('./renderer-process/index');
 </script>
-
+<script>
+    var $$ = mdui.JQ;
+    $$("#regist_a").on('click', function(e){
+        console.log("222");
+    });
+</script>
 </html>

@@ -5015,6 +5015,7 @@ body.mdui-locked {
   z-index: 2000;
   visibility: hidden;
   background: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(17px);
   opacity: 0;
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
