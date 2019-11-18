@@ -106,6 +106,16 @@ span{
     -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0)));
 }
 .login-form{
+    animation-name:start;
+    animation-duration: 0.3s;
+    margin-top: 50px;
+    height: 500px;
+    padding-left: 40px;
+    padding-right: 50px;
+}
+.regist-form{
+    animation-name:start;
+    animation-duration: 0.3s;
     margin-top: 50px;
     height: 500px;
     padding-left: 40px;
@@ -120,6 +130,14 @@ span{
     }
     100%{
         opacity: 1;
+    }
+}
+@keyframes end{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
     }
 }
 @keyframes tran360{
