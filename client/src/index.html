@@ -8,135 +8,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/mdui/css/mdui.min.css">
-
+    <link rel="import" href="sections/home/home.html">
     <script src="../assets/mdui/js/mdui.min.js"></script>
+    <script src="../assets/js/index.js"></script>
 </head>
-
 <body class="mdui-drawer-body-left mdui-loaded mdui-theme-primary-blue">
-    <!-- <span id="close_window" mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white close_btn"><i class="mdui-icon material-icons">menu</i></span> -->
-    <div class="mdui-drawer mdui-drawer-open" style="top:50px;" id="left-drawer">
-        <div class="head-icon mdui-shadow-17">
-            <div class="box">
-                <img src="../assets/img/user_black.png">
-            </div>
-        </div>
-        <div class="user-info">
-            <span id="user-info-username mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
-                mdui-dialog="{target: '#login-register-dialog'}">登录/注册</span>
-        </div>
-        <div class="list-menu mdui-list"><a
-                class="mdui-list-item mdui-ripple mdui-text-color-theme mdui-list-item-active" href="/"><i
-                    class="mdui-list-item-icon mdui-icon material-icons">home</i>
-                <div class="mdui-list-item-content">首页</div>
-            </a><a class="mdui-list-item mdui-ripple" href="/questions"><i
-                    class="mdui-list-item-icon mdui-icon material-icons">forum</i>
-                <div class="mdui-list-item-content">工具箱</div>
-            </a><a href="/docs" class="mdui-list-item mdui-ripple"><i
-                    class="mdui-list-item-icon mdui-icon material-icons">book</i>
-                <div class="mdui-list-item-content">用户中心</div>
-            </a><a href="/docs" class="mdui-list-item mdui-ripple"><i
-                    class="mdui-list-item-icon mdui-icon material-icons">announcement</i>
-                <div class="mdui-list-item-content">通知</div>
-            </a><a href="/design" class="mdui-list-item mdui-ripple"><i
-                    class="mdui-list-item-icon mdui-icon material-icons">settings</i>
-                <div class="mdui-list-item-content">设置</div>
-            </a>
-        </div>
-    </div>
-    <div class="user-form mdui-dialog" style="width: 400px;" id="login-register-dialog">
-        <div id="login-form" class="login-form">
-            <div class="head-icon mdui-shadow-17">
-                <div class="box">
-                    <img src="../assets/img/user_black.png">
-                </div>
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">account_circle</i>
-                <label class="mdui-textfield-label">用户名/邮箱</label>
-                <input class="mdui-textfield-input" type="text" required />
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">vpn_key</i>
-                <label class="mdui-textfield-label">密码</label>
-                <input class="mdui-textfield-input" type="password" pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$"
-                    required />
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">code</i>
-                <label class="mdui-textfield-label">验证码</label>
-                <input class="mdui-textfield-input" style="width:100px;" type="text" required />
-                <img style="background: white;float:right;margin-top:-40px;" width="100px" height="40px">
-            </div>
-            <center><button
-                    class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue mdui-text-color-white"
-                    style="width: 200px;margin: 0 auto;margin-top:20px">登录</button></center>
-            <div style="margin-top:20px;width:100%;text-align: center;">
-                <span>没有账号？立即<a id="regist_a" class="mdui-text-color-blue" style="cursor:pointer;" onclick="form_tans(this)">注册</a>一个</span>
-            </div>
-        </div>
-        <div id="regist-form" class="regist-form"style="display:none">
-            <div class="">
-                <span class="mdui-text-color-purple">注册一个账号，获取更多精彩</span>
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">account_circle</i>
-                <label class="mdui-textfield-label">用户名</label>
-                <input class="mdui-textfield-input" type="text" required />
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">email</i>
-                <label class="mdui-textfield-label">邮箱</label>
-                <input class="mdui-textfield-input" type="email" required />
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">vpn_key</i>
-                <label class="mdui-textfield-label">密码</label>
-                <input class="mdui-textfield-input" type="password" pattern="^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$"
-                    required />
-            </div>
-            <div class="mdui-textfield mdui-textfield-floating-label">
-                <i class="mdui-icon material-icons">code</i>
-                <label class="mdui-textfield-label">验证码</label>
-                <input class="mdui-textfield-input" style="width:100px;" type="text" required />
-                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-purple mdui-text-color-white" style="float:right;margin-top:-40px;" width="100px" height="40px">获取验证码</button>
-            </div>
-            <center><button
-                    class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-purple mdui-text-color-white"
-                    style="width: 200px;margin: 0 auto;margin-top:20px">注册</button></center>
-            <div style="margin-top:20px;width:100%;text-align: center;">
-                <span>已经有了账号？立即<a id="login_a" class="mdui-text-color-purple" style="cursor:pointer;" onclick="form_tans(this)">登录</a></span>
-            </div>
-        </div>
-    </div>
+    <main class="content">
+    </main>
 </body>
 <script>
     require('electron-connect').client.create();
     require('./renderer-process/index');
-</script>
-<script>
-    var $$ = mdui.JQ;
-    $$("#regist_a").on('click', function(e){
-        console.log("222");
-    });
-    function form_tans(e){
-        let resgit_form = "#regist-form";
-        let login_form = "#login-form";
-        if(e.id === "login_a"){
-            $$(resgit_form).css("animation-name","end");
-            setTimeout(() =>{
-                $$(resgit_form).css("display","none");
-                $$(login_form).css("animation-name","start");
-                $$(login_form).css("display","block");
-            },270);
-        }else if(e.id === "regist_a")
-        {
-            $$(login_form).css("animation-name","end");
-            setTimeout(() =>{
-                $$(login_form).css("display","none");
-                $$(resgit_form).css("animation-name","start");
-                $$(resgit_form).css("display","block");
-            },270);
-        }
-    }
 </script>
 </html>
