@@ -19,8 +19,8 @@ function rendererHtml() {
         <span id="reduce_window" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white reduce_btn"><i class="mdui-icon material-icons">keyboard_arrow_down</i></span>
         </nav>`;
     let left = `
-        <div class="mdui-drawer mdui-drawer-open" style="top:50px;" id="left-drawer">
-            <div class="head-icon mdui-shadow-17">
+        <div class="mdui-drawer mdui-drawer-open mdui-shadow-2 left-drawer" id="left-drawer">
+            <div class="head-icon mdui-shadow-17" style="margin-top:100px;">
                 <div class="box">
                     <img src="../assets/img/user_black.png">
                 </div>
@@ -121,6 +121,7 @@ function renderContent() {
 }
 rendererHtml();
 renderContent();
+
 const as = document.querySelectorAll('.mdui-list-item.mdui-ripple');
 Array.prototype.forEach.call(as, (a) => {
     a.addEventListener('click', (event) => {
@@ -154,3 +155,5 @@ close_btn.addEventListener('click', (event) => {
 reduce_btn.addEventListener('click', (event) => {
     ipcRenderer.send('window-message', 'reduce');
 });
+
+

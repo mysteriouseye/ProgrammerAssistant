@@ -19,3 +19,7 @@ function form_tans(e) {
         }, 270);
     }
 }
+setTimeout(() => {
+    $$('#left-drawer').addClass('is-shown');
+    $$('#home-section').addClass('is-shown')
+},1000)

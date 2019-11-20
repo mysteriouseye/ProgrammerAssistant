@@ -1,10 +1,10 @@
-const { app,BrowserWindow } = require('electron');
+const { app,BrowserWindow,ipcMain } = require('electron');
 const jsonfile = require('jsonfile');
 const client = require('electron-connect').client;
 const path = require('path');
 const glob = require('glob');
 const debug = /--debug/.test(process.argv[2]);
-const config_name = `${__dirname}\\json\\window.json`
+const config_name = `${__dirname}/json/window.json`
 require('electron-reload')(__dirname);
 
 let mainWindow = null;
@@ -55,6 +55,16 @@ function initialize() {
     app.on('activate', () => {
         if (mainWindow === null) {
             createWindow();
+        }
+    });
+    ipcMain.on('window-message', (event, arg) => {
+        console.log(arg);
+        switch (arg) {
+            case "close":
+                mainWindow.close();
+                break;
+            case "reduce":
+                mainWindow.minimize();
         }
     });
 }

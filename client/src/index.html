@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>程序员助手</title>
     <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="../assets/mdui/css/mdui.min.css">
     <link rel="stylesheet" href="../assets/css/section.css">
     <link rel="import" href="sections/home/home.html">
@@ -15,11 +16,13 @@
     <script src="../assets/js/index.js"></script>
 </head>
 <body class="mdui-drawer-body-left mdui-loaded mdui-theme-primary-blue">
+    <div style="background: url('../assets/img/wallhaven-5wm297.jpg') fixed;background-size: cover;position: fixed;width: 100%;height: 640px;left: 0px;"></div>
     <main class="content">
     </main>
 </body>
 <script>
     require('electron-connect').client.create();
     require('./renderer-process/index');
+    require('./renderer-process/home');
 </script>
 </html>
