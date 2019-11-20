@@ -106,15 +106,7 @@ span{
     color:#69d9ff;
     -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0)));
 }
-.login-form{
-    animation-name:start;
-    animation-duration: 0.3s;
-    margin-top: 50px;
-    height: 500px;
-    padding-left: 40px;
-    padding-right: 50px;
-}
-.regist-form{
+.login-regist-form{
     animation-name:start;
     animation-duration: 0.3s;
     margin-top: 50px;
@@ -134,17 +126,21 @@ span{
 }
 @keyframes start{
     0%{
+        transform: translateX(-20px);
         opacity: 0;
     }
     100%{
+        transform: translateX(0px);
         opacity: 1;
     }
 }
 @keyframes end{
     0%{
+        transform: translateX(0px);
         opacity: 1;
     }
     100%{
+        transform: translateX(-20px);
         opacity: 0;
     }
 }
