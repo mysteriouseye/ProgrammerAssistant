@@ -20,6 +20,7 @@
     "electron-reload": "^1.5.0",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "jsonfile": "^5.0.0"
   }
 }

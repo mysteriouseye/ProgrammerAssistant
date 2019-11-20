@@ -1,3 +1,4 @@
+
 const $$ = mdui.JQ;
 function form_tans(e) {
     let resgit_form = "#regist-form";

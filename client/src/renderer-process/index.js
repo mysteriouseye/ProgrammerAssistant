@@ -34,8 +34,8 @@ function rendererHtml() {
 
     for (let [key, value] of Object.entries(userIds)) {
         left_menu += `
-            <a class="mdui-list-item mdui-ripple mdui-text-color-purple" id="${key}">
-                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">${key}</i>
+            <a class="mdui-list-item mdui-ripple select-list" id="${key}">
+                <i class="mdui-list-item-icon mdui-icon material-icons">${key}</i>
                 <div class="mdui-list-item-content">${value}</div>
             </a>`;
     }
@@ -127,14 +127,11 @@ Array.prototype.forEach.call(as, (a) => {
             console.log(event);
             sectionAction(a);
 
-    })
-})
-// document.body.addEventListener('click', (event) => {
-
-// });
+    });
+});
 function sectionAction(event){
     hidenSectionsAndButtons();
-    event.classList.add('mdui-text-color-purple');
+    event.classList.add('select-list');
     const sectionVal = `${event.id}-section`;
     document.getElementById(sectionVal).classList.add('is-shown');
 }
@@ -144,9 +141,9 @@ function hidenSectionsAndButtons(){
         sections.classList.remove('is-shown');
     });
 
-    const a = document.querySelectorAll('.mdui-text-color-purple');
+    const a = document.querySelectorAll('.select-list');
     Array.prototype.forEach.call(a, (a) => {
-        a.classList.remove('mdui-text-color-purple');
+        a.classList.remove('select-list');
     })
 }
 const close_btn = document.getElementById('close_window');

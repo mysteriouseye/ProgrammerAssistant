@@ -1,44 +1,48 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app,BrowserWindow } = require('electron');
+const jsonfile = require('jsonfile');
 const client = require('electron-connect').client;
 const path = require('path');
 const glob = require('glob');
 const debug = /--debug/.test(process.argv[2]);
+const config_name = `${__dirname}\\json\\window.json`
 require('electron-reload')(__dirname);
-
-if(process.mas) app.setName('程序员助手 Dev 1.0')
 
 let mainWindow = null;
 
 function initialize() {
     makeSingleInstance();
     loadMains();
-    const createWindow = () =>{
-        const windowOptions = {
-            width: 1080,
-            minWidth: 680,
-            height: 640,
-            titile: app.getName(),
-            frame: false,
-            resizable:false,
-            webPreferences: {
-                nodeIntegration: true
+
+    const createWindow = () => {
+        jsonfile.readFile(config_name, (err, data) => {
+            if (err) throw err;
+            const windowOptions = {
+                width: data.width,
+                height: data.height,
+                minWidth: data.minWidth,
+                title: data.title,
+                frame: data.frame,
+                resizable: data.resizable,
+                webPreferences: {
+                    nodeIntegration: data.nodeIntegration
+                }
             }
-        }
-        //!!!图标 保留
-        // if(process.platform === 'linux') {
-        //     windowOptions.icon = path.join(__dirname,'/assets/')
-        // }
-        mainWindow = new BrowserWindow(windowOptions);
-        mainWindow.loadURL(path.join(`file://${__dirname}/src/index.html`));
-        if(debug) {
-            mainWindow.webContents.openDevTools();
-            mainWindow.maximize();
-            require('devtron').install();
-        }
-        mainWindow.on('closed', () => {
-            mainWindow = null;
+            //!!!图标 保留
+            // if(process.platform === 'linux') {
+            //     windowOptions.icon = path.join(__dirname,'/assets/')
+            // }
+            mainWindow = new BrowserWindow(windowOptions);
+            mainWindow.loadURL(path.join(`file://${__dirname}/src/index.html`));
+            if (debug) {
+                mainWindow.webContents.openDevTools();
+                mainWindow.maximize();
+                require('devtron').install();
+            }
+            mainWindow.on('closed', () => {
+                mainWindow = null;
+            });
+            client.create(mainWindow);
         });
-        client.create(mainWindow);
     }
 
     app.on('ready', createWindow);
@@ -49,34 +53,27 @@ function initialize() {
     });
 
     app.on('activate', () => {
-        if(mainWindow === null){
+        if (mainWindow === null) {
             createWindow();
         }
-    })
-    ipcMain.on('window-message', (event, arg) => {
-        console.log(arg);
-        switch(arg){
-            case "close":
-                mainWindow.close();
-                break;
-            case "reduce":
-                mainWindow.minimize();
-        }
-    })
+    });
 }
+
 function makeSingleInstance() {
     if (process.mas) return;
     app.requestSingleInstanceLock();
     app.on('second-instance', () => {
-        if(mainWindow) {
+        if (mainWindow) {
             if (mainWindow.isMinimized()) mainWindow.restore();
             mainWindow.focus();
         }
     });
 }
 
-function loadMains () {
+function loadMains() {
     const files = glob.sync(path.join(__dirname, './src/main-process/**/*.js'));
-    files.forEach((file) => { require(file) });
+    files.forEach((file) => {
+        require(file)
+    });
 }
 initialize();

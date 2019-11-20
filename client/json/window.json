@@ -1,0 +1,9 @@
+{
+    "width": 1080,
+    "minWidth": 680,
+    "height": 640,
+    "titile": "程序员助手",
+    "frame": false,
+    "resizable":false,
+    "nodeIntegration": true
+}
