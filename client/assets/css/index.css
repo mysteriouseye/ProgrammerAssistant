@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0 auto;
     padding: 0;
     animation-name: start;
@@ -6,22 +6,34 @@ body{
     animation-iteration-count: 1;
     user-select: none;
 }
-.header-line{
-    -webkit-app-region:drag;
+
+.back-image {
+    background: url('../img/wallhaven-5wm297.jpg') fixed;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 640px;
+    left: 0px;
+}
+
+.header-line {
+    -webkit-app-region: drag;
     width: 87%;
     height: 30px;
     padding-top: 30px;
     z-index: 9999;
 }
-.left-drawer{
-    background: rgba(255,255,255,0.6);
+
+.left-drawer {
+    background: rgba(255, 255, 255, 0.6);
     pointer-events: none;
     opacity: 0;
-    height:640px;
+    height: 640px;
     backdrop-filter: blur(17px);
     visibility: hidden;
     transition: visibility 0s 1s linear, opacity 1s ease-in, transform 1s ease-in;
 }
+
 .left-drawer.is-shown {
     pointer-events: auto;
     visibility: visible;
@@ -29,9 +41,10 @@ body{
     display: inline;
     transition: visibility 0s 1s linear, opacity 1s ease-out, transform 1s ease-out;
 }
-.head-icon{
+
+.head-icon {
     margin: 0 auto;
-    margin-top:50px;
+    margin-top: 50px;
     width: 100px;
     height: 100px;
     box-sizing: border-box;
@@ -43,147 +56,171 @@ body{
     animation-iteration-count: 1;
     transition: All 0.6s ease-in-out;
 }
-.head-icon:hover{
+
+.head-icon:hover {
     transform: rotate(360deg);
 }
-.user-info{
+
+.user-info {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:20px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
-.user-info>span{
+
+.user-info>span {
     transition: All 0.2s ease-in-out;
     cursor: pointer;
 }
-.user-info>span:hover{
+
+.user-info>span:hover {
     transition: All 0.2s ease-in-out;
     color: #69d9ff;
 }
+
 .box {
-	width:100%;
-    height:100%;
-    border-radius:50%;
-    background:#fff;
-    display:flex;
-	align-items:center;
-    justify-content:center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.box>img{
+
+.box>img {
     width: 70%;
     height: auto;
 }
-.list-menu>a{
+
+.list-menu>a {
     padding-left: 50px;
     padding-right: 50px;
 }
-.select-list{
-    color:#2196f3!important;
+
+.select-list {
+    color: #2196f3 !important;
 }
-span{
+
+span {
     color: gray;
     -webkit-user-select: none;
 }
-.header-line>span{
+
+.header-line>span {
     margin-left: 50px;
-    text-shadow: 0px 3px 9px rgba(0,0,0,0.5);
+    text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.5);
 }
-.close-line{
+
+.close-line {
     width: 10%;
     height: 50px;
     position: fixed;
     right: 0px;
-    top:0px;
+    top: 0px;
 }
-.close-line>.close_btn{
+
+.close-line>.close_btn {
     position: absolute;
     right: 50px;
-    top:26px;
-    color: gray;
-    transition: All 0.6s ease-in-out;
-}
-.close-line>.reduce_btn{
-    position: absolute;
-    right: 100px;
-    top:26px;
+    top: 26px;
     color: gray;
     transition: All 0.6s ease-in-out;
 }
 
-.close_btn:hover{
+.close-line>.reduce_btn {
+    position: absolute;
+    right: 100px;
+    top: 26px;
+    color: gray;
+    transition: All 0.6s ease-in-out;
+}
+
+.close_btn:hover {
     animation-name: tran360;
     animation-duration: 0.6s;
     animation-iteration-count: 1;
-    color:#8146b4;
+    color: #8146b4;
     -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0)));
 }
-.reduce_btn:hover{
+
+.reduce_btn:hover {
     animation-name: tran360;
     animation-duration: 0.6s;
     animation-iteration-count: 1;
-    color:#69d9ff;
+    color: #69d9ff;
     -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0)));
 }
-.login-regist-form{
-    animation-name:start;
+
+.login-regist-form {
+    animation-name: start;
     animation-duration: 0.3s;
     margin-top: 50px;
     height: 500px;
     padding-left: 40px;
     padding-right: 46px;
 }
-.user-form{
-    background-color: rgba(255,255,255,0.7);
+
+.user-form {
+    background-color: rgba(255, 255, 255, 0.7);
 }
-.content{
+
+.content {
     position: relative;
-    top:60px;
+    top: 60px;
     width: 100%;
     height: 580px;
 
 }
-@keyframes start{
-    0%{
+
+@keyframes start {
+    0% {
         transform: translateX(-20px);
         opacity: 0;
     }
-    50%{
+
+    50% {
         transform: translateX(-20px);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateX(0px);
         opacity: 1;
     }
 }
-@keyframes end{
-    0%{
+
+@keyframes end {
+    0% {
         transform: translateX(0px);
         opacity: 1;
     }
-    100%{
+
+    100% {
         transform: translateX(-20px);
         opacity: 0;
     }
 }
-@keyframes tran360{
-    0%{
+
+@keyframes tran360 {
+    0% {
         transform: rotateZ(0deg);
     }
-    100%{
+
+    100% {
         transform: rotateZ(360deg);
     }
 }
-@keyframes head-tran360{
-    0%{
+
+@keyframes head-tran360 {
+    0% {
         background-position: 0px -400px;
     }
-    100%{
+
+    100% {
         background-position: 100px -300px;
     }
 
 }
-
-
