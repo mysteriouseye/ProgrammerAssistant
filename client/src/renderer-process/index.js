@@ -1,6 +1,11 @@
 const { ipcRenderer } = require('electron');
 const links = document.querySelectorAll('link[rel="import"]');
 
+
+ipcRenderer.send("request-back-image", '1');
+ipcRenderer.on('response-back-image', (event, arg) => {
+    document.getElementById('back-image').style.background = `url('../assets/img/${arg}') fixed`;
+});
 function rendererHtml() {
     let left_menu = ``
     const userIds = {
@@ -155,5 +160,6 @@ close_btn.addEventListener('click', (event) => {
 reduce_btn.addEventListener('click', (event) => {
     ipcRenderer.send('window-message', 'reduce');
 });
+
 
 

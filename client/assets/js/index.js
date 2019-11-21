@@ -22,4 +22,4 @@ function form_tans(e) {
 setTimeout(() => {
     $$('#left-drawer').addClass('is-shown');
     $$('#home-section').addClass('is-shown')
-},1000)
+},1500)
