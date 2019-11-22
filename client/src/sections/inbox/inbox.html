@@ -1,5 +1,51 @@
 <template class="task-template">
     <section id="inbox-section" class="section">
-        <span>inbox</span>
+        <div class="inbox-div">
+            <div class="mdui-tab" mdui-tab>
+                <a href="#regular-tool" class="mdui-ripple">正则工具</a>
+                <a href="#example1-tab2" class="mdui-ripple">加解密工具</a>
+                <a href="#example1-tab3" class="mdui-ripple">书写工具</a>
+                <a href="#example1-tab3" class="mdui-ripple">Web请求工具</a>
+                <a href="#example1-tab3" class="mdui-ripple">颜色工具</a>
+                <a href="#qrcode-tool" class="mdui-ripple">二维码工具</a>
+                <a href="#example1-tab3" class="mdui-ripple">OCR识别工具</a>
+            </div>
+            <div id="regular-tool" class="mdui-p-a-2">
+                <h3>正则工具可以帮助你测试正则表达式</h2>
+                <!-- <span>选择预设表达式：</span>
+                <select class="mdui-select" mdui-select>
+                        <option value="1">无</option>
+                        <option value="2">State 2</option>
+                        <option value="3">State 3</option>
+                        <option value="4">State 4</option>
+                        <option value="5">State 5</option>
+                        <option value="6">State 6</option>
+                        <option value="6">State 6</option>
+                        <option value="6">State 6</option>
+                        <option value="6">State 6</option>
+                        <option value="6">State 6</option>
+                </select> -->
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">请输入正则表达式</label>
+                    <input id="regular-ex" class="mdui-textfield-input" type="text" onchange="doRex()"/>
+                </div>
+                <div class="mdui-textfield">
+                    <textarea id="regular-text" class="mdui-textfield-input" rows="4" placeholder="输入要匹配的文本" onchange="doRex()"></textarea>
+                </div>
+                <div class="mdui-textfield">
+                    <textarea id="regular-result" class="mdui-textfield-input" rows="4" placeholder="结果" disabled></textarea>
+                </div>
+            </div>
+            <div id="qrcode-tool" class="mdui-p-a-2">
+                <h3>二维码工具可以帮你把文本转换为二维码图片</h3>
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">请输入文本</label>
+                    <input id="qrcode-text" class="mdui-textfield-input" type="text" value="ddddd" onblur="makeCode()"/>
+                </div>
+                <span>结果：</span>
+                <div id="qrcode" style="width: 200px;height: 200px;"></div>
+            </div>
+            <div id="example1-tab3" class="mdui-p-a-2">images content</div>
+        </div>
     </section>
 </template>

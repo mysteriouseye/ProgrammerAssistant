@@ -12,7 +12,6 @@ function rendererHtml() {
         'home': '首页',
         'inbox': '工具箱',
         'account_circle': '用户中心',
-        'announcement': '通知',
         'settings': '设置'
     }
     let header = `

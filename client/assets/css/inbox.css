@@ -1,0 +1,11 @@
+.inbox-div{
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(17px);
+    border-radius: 17px;
+    position: relative;
+    padding: 20px;
+    top:20px;
+}

@@ -1,29 +1,33 @@
-.home-div{
-    padding-top:70px;
+.home-div {
+    padding-top: 70px;
     width: 100%;
 }
-.home-div>#home-div-line{
+
+.home-div>#home-div-line {
     width: 400px;
     height: 120px;
     padding: 10px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(17px);
     border-radius: 20px;
 }
-.home-div>#home-div-line>h1{
+
+.home-div>#home-div-line>h1 {
     text-align: center;
     color: black;
 }
-.home-div>#home-div-line>h2{
+
+.home-div>#home-div-line>h2 {
     text-align: center;
     color: gray;
 }
-.home-div>#home-div-quick{
+
+.home-div>#home-div-quick {
     width: 80%;
     height: 200px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     position: relative;
     top: 100px;
@@ -31,10 +35,24 @@
     padding: 10px;
     backdrop-filter: blur(17px);
 }
-#home-div-quick>#quick-start{
+
+#home-div-quick>#quick-start {
     width: 80%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
+}
+
+#quick-start>.quick-start-btn {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+.quick-start-btn>i{
+    font-size: 60px;
 }
