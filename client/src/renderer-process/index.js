@@ -1,7 +1,6 @@
 const { ipcRenderer } = require('electron');
 const links = document.querySelectorAll('link[rel="import"]');
 
-
 ipcRenderer.send("request-back-image", '1');
 ipcRenderer.on('response-back-image', (event, arg) => {
     document.getElementById('back-image').style.background = `url('../assets/img/${arg}') fixed`;
@@ -12,7 +11,8 @@ function rendererHtml() {
         'home': '首页',
         'inbox': '工具箱',
         'account_circle': '用户中心',
-        'settings': '设置'
+        'fiber_new': '(FLAG)IT新闻',
+        'settings': '设置',
     }
     let header = `
         <nav class="header-line mdui-appbar-fixed">

@@ -9,3 +9,13 @@
     padding: 20px;
     top:20px;
 }
+.crypto-div{
+    display: flex;
+}
+.crypto-div>input{
+    margin-left: 20px;
+    width: 200px;
+}
+.crypto-div>button{
+    margin-left: 20px;
+}

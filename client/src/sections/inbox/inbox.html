@@ -3,49 +3,64 @@
         <div class="inbox-div">
             <div class="mdui-tab" mdui-tab>
                 <a href="#regular-tool" class="mdui-ripple">正则工具</a>
-                <a href="#example1-tab2" class="mdui-ripple">加解密工具</a>
-                <a href="#example1-tab3" class="mdui-ripple">书写工具</a>
+                <a href="#crypto-tool" class="mdui-ripple">加解密工具</a>
+                <a href="#qrcode-tool" class="mdui-ripple">二维码工具</a>
+                <a href="#example1-tab3" class="mdui-ripple">markdown工具</a>
                 <a href="#example1-tab3" class="mdui-ripple">Web请求工具</a>
                 <a href="#example1-tab3" class="mdui-ripple">颜色工具</a>
-                <a href="#qrcode-tool" class="mdui-ripple">二维码工具</a>
                 <a href="#example1-tab3" class="mdui-ripple">OCR识别工具</a>
+                <a href="#rss" class="mdui-ripple">RSS订阅工具</a>
             </div>
             <div id="regular-tool" class="mdui-p-a-2">
                 <h3>正则工具可以帮助你测试正则表达式</h2>
-                <!-- <span>选择预设表达式：</span>
-                <select class="mdui-select" mdui-select>
-                        <option value="1">无</option>
-                        <option value="2">State 2</option>
-                        <option value="3">State 3</option>
-                        <option value="4">State 4</option>
-                        <option value="5">State 5</option>
-                        <option value="6">State 6</option>
-                        <option value="6">State 6</option>
-                        <option value="6">State 6</option>
-                        <option value="6">State 6</option>
-                        <option value="6">State 6</option>
-                </select> -->
-                <div class="mdui-textfield mdui-textfield-floating-label">
-                    <label class="mdui-textfield-label">请输入正则表达式</label>
-                    <input id="regular-ex" class="mdui-textfield-input" type="text" onchange="doRex()"/>
-                </div>
-                <div class="mdui-textfield">
-                    <textarea id="regular-text" class="mdui-textfield-input" rows="4" placeholder="输入要匹配的文本" onchange="doRex()"></textarea>
-                </div>
-                <div class="mdui-textfield">
-                    <textarea id="regular-result" class="mdui-textfield-input" rows="4" placeholder="结果" disabled></textarea>
-                </div>
+                    <span>选择预设表达式：</span>
+                    <select id="regular-select" class="mdui-select" mdui-select>
+                    </select>
+                    <div class="mdui-textfield">
+                        <input id="regular-ex" placeholder="请输入正则表达式" class="mdui-textfield-input" type="text"
+                            onchange="doRex()" />
+                    </div>
+                    <div class="mdui-textfield">
+                        <textarea id="regular-text" class="mdui-textfield-input" rows="4" placeholder="输入要匹配的文本"
+                            onchange="doRex()"></textarea>
+                    </div>
+                    <div class="mdui-textfield">
+                        <textarea id="regular-result" class="mdui-textfield-input" rows="4"
+                            placeholder="没有结果，请在上方输入相应的值，脱离焦点即可得出结果" disabled></textarea>
+                    </div>
             </div>
             <div id="qrcode-tool" class="mdui-p-a-2">
                 <h3>二维码工具可以帮你把文本转换为二维码图片</h3>
                 <div class="mdui-textfield mdui-textfield-floating-label">
                     <label class="mdui-textfield-label">请输入文本</label>
-                    <input id="qrcode-text" class="mdui-textfield-input" type="text" value="ddddd" onblur="makeCode()"/>
+                    <input id="qrcode-text" class="mdui-textfield-input" type="text" value="ddddd"
+                        onblur="makeCode()" />
                 </div>
                 <span>结果：</span>
                 <div id="qrcode" style="width: 200px;height: 200px;"></div>
             </div>
-            <div id="example1-tab3" class="mdui-p-a-2">images content</div>
+            <div id="crypto-tool" class="mdui-p-a-2">
+                <h3>加解密工具可以帮助你加解密常见的算法密文</h3>
+                <div class="crypto-div mdui-textfiled">
+                    <select id="crypto-method" class="mdui-select" mdui-select>
+                        <option>AES</option>
+                        <option>RC4</option>
+                        <option>Tripledes</option>
+                        <option>Rabbit</option>
+                        <option>evpkdf</option>
+                    </select>
+                    <input id="keys" placeholder="请输入加解密密匙" class="mdui-textfield-input" type="text" />
+                    <input id="ivs" placeholder="请输入iv偏移量" class="mdui-textfield-input" type="text" />
+                    <button id="encrypt-button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue mdui-text-color-white">加密</button>
+                    <button id="decrypt-button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-purple mdui-text-color-white">解密</button>
+                </div>
+                <div class="mdui-textfield">
+                    <textarea id="public-text" class="mdui-textfield-input" rows="6" placeholder="明文"></textarea>
+                </div>
+                <div class="mdui-textfield">
+                    <textarea id="crypto-text" class="mdui-textfield-input" rows="6" placeholder="密文"></textarea>
+                </div>
+            </div>
         </div>
     </section>
 </template>
